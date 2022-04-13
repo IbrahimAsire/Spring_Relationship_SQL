@@ -31,9 +31,6 @@ public class UsersController {
     }
 
 
-
-
-
     @PostMapping("user")
     public ResponseEntity addUser(@RequestBody UserPojo userPojo){
         userService.addUser(userPojo);

@@ -7,15 +7,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @NoArgsConstructor @Data
 public class MyUserDetails {
 
     @Id
+    @Size(min = 1, max = 8)
     @Column(name = "user_id")
     private Integer id;
+    @NotEmpty(message = "userName is empty!")
     private String username;
+    @NotEmpty(message = "password is empty!")
     private String password;
     private String role;
     private String phoneNumber;
